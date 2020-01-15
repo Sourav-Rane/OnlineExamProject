@@ -10,8 +10,8 @@
 </head>
 <body align="center">
 	
-	
-	<form action="listQuestionCategoryWise">
+	<h3>Admin module</h3>
+	<form action="admin_listQuestionCategoryWise">
 		<select name="category">
 			<option value = "Plants">Plants</option>
 			<option value = "Animals">Animals</option>
@@ -22,24 +22,25 @@
 	
 	
 	<br><br>
-	
-	<table border=2 align = "center">
-		<tr>
-			<th>Qn No</th>
-			<th>Question</th>
-			<th>Answer</th>
-			<th>Delete</th>
-		</tr>
-
-		<c:forEach items="${allQuestions}" var="qn" varStatus="it">
+	<c:if test = "${flag eq 1}">
+		<table border=2 align="center">
 			<tr>
-				<th>${it.count}</th>
-				<th><c:out value="${qn.question}"></c:out></th>
-				<th><c:out value="${qn.questionAnswer}"></c:out></th>
-				<th><a href ="<c:url value='/deleteQuestion/${qn.question}'></c:url>">Delete</a></th>
+				<th>Qn No</th>
+				<th>Question</th>
+				<th>Delete Question</th>
 			</tr>
-		</c:forEach>
-	</table>
+
+			<c:forEach items="${allQuestions}" var="qn" varStatus="it">
+				<tr>
+					<th>${it.count}</th>
+					<th align="left"><c:out value="${qn.question}"></c:out></th>
+					<th><a
+						href="<c:url value='/admin_deleteQuestion/${qn.question}'></c:url>">Delete</a></th>
+				</tr>
+			</c:forEach>
+		</table>
+	</c:if>
+	
 	
 </body>
 </html>

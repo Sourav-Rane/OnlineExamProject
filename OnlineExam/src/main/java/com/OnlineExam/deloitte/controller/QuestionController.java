@@ -20,32 +20,34 @@ public class QuestionController {
 	OnlineExamService onlineExamService;
 
 	//list out all qns based on a given category
-	@RequestMapping("/listQuestionCategoryWise")
+	@RequestMapping("/admin_listQuestionCategoryWise")
 	public ModelAndView viewQuestions(HttpServletRequest request) {
 		System.out.println("Question Controller => viewQuestions ");
 		String category = request.getParameter("category");
 		ModelAndView view = new ModelAndView("Admin_allQuestion");
 		List<Question> allQuestions = onlineExamService.listQuestions(category);
+		view.addObject("flag",1);
 		view.addObject("allQuestions", allQuestions);
 		return view;
 		
 	}
 	
 	
-	@RequestMapping("/question")
+	@RequestMapping("/admin_question")
 	public ModelAndView Questions() {
 		System.out.println("Question Controller => Questions ");
 		ModelAndView view = new ModelAndView("Admin_allQuestion");
 		List<Question> allQns = null;
+		view.addObject("flag",0);
 		view.addObject("allQuestions",allQns);
 		return view;
 		
 	}
 	
-	@RequestMapping("/deleteQuestion/{qn}")
+	@RequestMapping("/admin_deleteQuestion/{qn}")
 	public ModelAndView deleteQuestion(@PathVariable("qn")String qn) {
 		System.out.println("################# QUESTION CONTROLLER -> DELETEQUESTION ############### ");
-		ModelAndView view = new ModelAndView("redirect:/question");
+		ModelAndView view = new ModelAndView("redirect:/admin_question");
 		onlineExamService.deleteQuestion(qn);
 		return view;
 	}
