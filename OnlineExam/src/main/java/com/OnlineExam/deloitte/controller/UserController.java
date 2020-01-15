@@ -22,6 +22,24 @@ public class UserController {
 	OnlineExamService onlineExamService;
 	
 	
+	@RequestMapping("/select_TestCategory")
+	public ModelAndView selectTestCategory() {
+		System.out.println("######### USER CONTROLLER => SELECT TEST CATEGORY ########## ");
+		ModelAndView view = new ModelAndView("User_Welcome");
+		return view;
+	}
+	
+	@RequestMapping("/beginTest")
+	public ModelAndView beingTest(HttpServletRequest request) {
+		System.out.println("######### USER CONTROLLER => BEGIN TEST ##########  ");
+		String category = request.getParameter("category");
+		ModelAndView view = new ModelAndView("redirect:/user_StartTest/"+category);
+		return view;
+		
+	}	
+	
+	
+	
 	@RequestMapping("/user_StartTest/{cat}")
 	public ModelAndView startTest(@PathVariable("cat")String category) {
 		System.out.println("######### USER CONTROLLER => START TEST ########## ");
