@@ -11,3 +11,37 @@
 </body>
 
 </html>
+
+<table border = 2px align = "center">
+	
+		<tr>
+			<th>QnNo.</th>
+			<th>Question</th>
+			<th>Choice 1</th>
+			<th>Choice 2</th>
+			<th>Choice 3</th>
+			<th>Answer</th>
+			<th>Delete</th>
+		</tr>
+
+		<%
+			List<Question> allCust = (List<Question>) session.getAttribute("allQuestions");
+			Iterator<Question> iterator = allCust.iterator();
+			int i=1;
+			
+			while (iterator.hasNext()) {
+				Question qn = iterator.next();
+		%>
+		<tr>
+			<td><%=i++%></td>
+			<td><%=qn.getQuestion()%></td>
+			<td><%=qn.getQuestionChoice1()%></td>
+			<td><%=qn.getQuestionChoice2()%></td>
+			<td><%=qn.getQuestionChoice3()%></td>
+			<td><%=qn.getQuestionAnswer()%></td>
+			<td><a href="deleteQuestion/<%=qn.getQuestion()%>">Delete</a></td>
+			
+		</tr>
+}
+		%>
+	</table>
