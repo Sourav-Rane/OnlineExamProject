@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.OnlineExam.deloitte.model.ExamUser;
 import com.OnlineExam.deloitte.model.Question;
+import com.OnlineExam.deloitte.model.Statistic;
 import com.OnlineExam.deloitte.service.OnlineExamService;
 
 @Controller
@@ -76,7 +78,16 @@ public class UserController {
 	}
 	
 	
-
+	@RequestMapping("/user_ViewStat/{email}")
+	public ModelAndView viewStat(@PathVariable("email")String email) {
+		System.out.println("######### USER CONTROLLER => VIEW STAT SOLO ##########  ");
+		ModelAndView view = new ModelAndView("User_ViewStat");
+		List<Statistic> userStat = onlineExamService.listUserStat(email);
+		view.addObject("userStat", userStat);		
+		return view;
+		
+	}	
+	
 	
 
 }

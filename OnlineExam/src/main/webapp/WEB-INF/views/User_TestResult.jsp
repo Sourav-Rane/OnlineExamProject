@@ -16,5 +16,8 @@
 		<h1> You seem to be good at this !!! </h1>
 	</c:if>
 	<h1>Your Score is ${finalScore}%</h1>
+	
+	
+	<a href="../../index">back to Home page</a>
 </body>
 </html>

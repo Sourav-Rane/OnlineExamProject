@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.OnlineExam.deloitte.model.Question;
 
-public interface OnlineExamDAO extends CrudRepository<Question, String>{
+public interface OnlineExamQuestionDAO extends CrudRepository<Question, String>{
 	
 	public List<Question> findByQuestionCategory(String category);
 

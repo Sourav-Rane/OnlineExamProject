@@ -30,19 +30,19 @@
 
 				<tr>
 					<th align="left"><input type="radio" name="qn${it.count}"
-						value='A' />
+						value='A' required>
 					<c:out value="${qn.questionChoice1}"></c:out></th>
 				</tr>
 
 				<tr>
 					<th align="left"><input type="radio" name="qn${it.count}"
-						value='B' />
+						value='B' required>
 					<c:out value="${qn.questionChoice2}"></c:out></th>
 				</tr>
 
 				<tr>
 					<th align="left"><input type="radio" name="qn${it.count}"
-						value='C' />
+						value='C' required>
 					<c:out value="${qn.questionChoice3}"></c:out></th>
 				</tr>
 			
