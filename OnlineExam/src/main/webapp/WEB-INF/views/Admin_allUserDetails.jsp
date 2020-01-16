@@ -9,7 +9,7 @@
 <meta charset="ISO-8859-1">
 <title>User Data</title>
 </head>
-<body>
+<body align="center">
 
 	<br>
 	<h3>Admin Retrieve user data</h3>
@@ -23,7 +23,8 @@
 			<input type=submit value="RETRIVE USER LOG" formaction="admin_retrieveUserData">
 	</form>
 	
-	
+	<br>
+	<c:if test = "${flagx eq 1}">
 	<table border=2 align="center">
 		<caption>SCORE CARD</caption>
 			<tr>
@@ -43,8 +44,10 @@
 					<th align="left"><c:out value="${stat.statScore}"></c:out></th>
 			</c:forEach>
 		</table>
+	</c:if>
 	
-
+	<br>
+	<button onclick="window.location.href = 'admin_welcome';">Admin Homepage</button>
 
 </body>
 </html>

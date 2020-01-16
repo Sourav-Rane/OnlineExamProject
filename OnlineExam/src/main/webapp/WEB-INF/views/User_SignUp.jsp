@@ -44,7 +44,11 @@
 		</form>
 		
 		<c:if test="${error eq 1}">
-		<h5 align = "center" style="color: red">Email id does not exist ! Please signup to continue...</h5>
+		<h5 align = "center" style="color: red">Email id already exists ! Proceed to login..</h5>
+	</c:if>
+	
+	<c:if test="${error eq 0}">
+		<h5 align = "center" style="color: green">User Succesfully Registered ! Proceed to login..</h5>
 	</c:if>
 
 </body>

@@ -1,7 +1,9 @@
 package com.OnlineExam.deloitte.controller;
 
 import java.util.Enumeration;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -51,5 +53,38 @@ public class AdminController {
 		return "Admin_allUserDetails";
 	}
 	
-	
+	// to populate the drop down with useremails
+		@RequestMapping("/admin_retrieveUser")
+		public ModelAndView retrieveUser() {
+			System.out.println("################# QUESTION CONTROLLER -> RETRIVE EMAIL USERS ############### ");
+			ModelAndView view = new ModelAndView("Admin_allUserDetails");
+			List<Statistic> allStats = onlineExamService.listStatistics();
+			Set<String> set = new HashSet<>();
+			for(Statistic s: allStats)
+				set.add(s.getStatEmail());
+			view.addObject("flagx", 0);
+			view.addObject("userStat", null);
+			view.addObject("allIds", set);
+			return view;
+
+		}
+		
+		/* ########################################################### */
+		@RequestMapping("/admin_retrieveUserData")
+		public ModelAndView viewStat(HttpServletRequest request) {
+			System.out.println("######### USER CONTROLLER => VIEW STAT SOLO ##########  ");
+			ModelAndView view = new ModelAndView("Admin_allUserDetails");
+			String email = request.getParameter("email");
+			List<Statistic> userStat = onlineExamService.listUserStat(email);
+			List<Statistic> allStats = onlineExamService.listStatistics();
+			Set<String> set = new HashSet<>();
+			for(Statistic s: allStats)
+				set.add(s.getStatEmail());
+			view.addObject("flagx", 1);
+			view.addObject("userStat", userStat);
+			view.addObject("allIds", set);
+			return view;
+			
+		}	
+
 }

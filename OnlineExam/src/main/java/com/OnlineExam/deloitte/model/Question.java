@@ -15,7 +15,7 @@ public class Question {
 	@Column
 	private String questionCategory;
 	@Id
-	private String question;
+	private String questionName;
 	@Column
 	private String questionChoice1;
 	@Column
@@ -27,7 +27,7 @@ public class Question {
 	
 	@Override
 	public String toString() {
-		return "Question [questionCategory=" + questionCategory + ", question=" + question + ", questionChoice1="
+		return "Question [questionCategory=" + questionCategory + ", question=" + questionName + ", questionChoice1="
 				+ questionChoice1 + ", questionChoice2=" + questionChoice2 + ", questionChoice3=" + questionChoice3
 				+ ", questionAnswer=" + questionAnswer + "]";
 	}
@@ -38,10 +38,10 @@ public class Question {
 		this.questionCategory = questionCategory;
 	}
 	public String getQuestion() {
-		return question;
+		return questionName;
 	}
 	public void setQuestion(String question) {
-		this.question = question;
+		this.questionName = question;
 	}
 	public String getQuestionChoice1() {
 		return questionChoice1;

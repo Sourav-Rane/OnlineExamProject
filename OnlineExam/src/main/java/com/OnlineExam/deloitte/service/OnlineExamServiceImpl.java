@@ -107,4 +107,9 @@ public class OnlineExamServiceImpl implements OnlineExamService {
 		}
 		return user;
 	}
+
+	@Override
+	public void addStatistic(Statistic stats) {
+		onlineExamStatisticDAO.save(stats);
+	}
 }

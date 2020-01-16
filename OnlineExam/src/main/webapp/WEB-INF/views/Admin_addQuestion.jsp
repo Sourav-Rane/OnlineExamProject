@@ -16,16 +16,15 @@
 
 </head>
 
-<body>
+<body align="center">
 
 <h3><center>Admin Add Question</center></h3>
 
 
-	<form >
+	<form>
 
 		<table cellspacing="10" cellpadding="10" border="0" align="center">
 
-			<caption>Add question</caption>
 
 			<br/><br/>
 
@@ -116,7 +115,8 @@
 		<div id=display align="center"></div>
 
 	</form>
-
+	
+	<button onclick="window.location.href = 'admin_welcome';">Admin Homepage</button>
 
 
 </body>

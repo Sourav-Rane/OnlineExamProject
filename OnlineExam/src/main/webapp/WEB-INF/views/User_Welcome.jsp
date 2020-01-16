@@ -18,5 +18,9 @@
 		<br><br>
 		<input type = "submit" value="START TEST"/>
 	</form>
+	<br>
+	<button onclick="window.location.href = 'user_ViewStat/<%= session.getAttribute("useremail")%>';">View Exam History</button>
+	<br><br>
+	<button onclick="window.location.href = 'user_login';">Logout</button>
 </body>
 </html>

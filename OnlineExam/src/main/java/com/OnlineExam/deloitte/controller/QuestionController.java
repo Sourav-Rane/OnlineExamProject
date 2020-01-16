@@ -76,40 +76,6 @@ public class QuestionController {
 		return view;
 
 	}
-	
-	// to populate the drop down with useremails
-	@RequestMapping("/admin_retrieveUser")
-	public ModelAndView retrieveUser() {
-		System.out.println("################# QUESTION CONTROLLER -> RETRIVE EMAIL USERS ############### ");
-		ModelAndView view = new ModelAndView("Admin_allUserDetails");
-		List<Statistic> allStats = onlineExamService.listStatistics();
-		Set<String> set = new HashSet<>();
-		for(Statistic s: allStats)
-			set.add(s.getStatEmail());
-	
-		view.addObject("userStat", null);
-		view.addObject("allIds", set);
-		return view;
-
-	}
-	
-	
-	/* ########################################################### */
-	@RequestMapping("/admin_retrieveUserData")
-	public ModelAndView viewStat(HttpServletRequest request) {
-		System.out.println("######### USER CONTROLLER => VIEW STAT SOLO ##########  ");
-		ModelAndView view = new ModelAndView("Admin_allUserDetails");
-		String email = request.getParameter("email");
-		List<Statistic> userStat = onlineExamService.listUserStat(email);
-		List<Statistic> allStats = onlineExamService.listStatistics();
-		Set<String> set = new HashSet<>();
-		for(Statistic s: allStats)
-			set.add(s.getStatEmail());
 		
-		view.addObject("userStat", userStat);
-		view.addObject("allIds", set);
-		return view;
-		
-	}	
-
+	
 }

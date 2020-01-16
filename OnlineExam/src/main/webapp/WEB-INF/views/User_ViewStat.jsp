@@ -7,9 +7,9 @@
 <meta charset="ISO-8859-1">
 <title>view any users stats</title>
 </head>
-<body>
+<body align = "center">
 
-
+	<h3>Your Score Card</h3>
 		<table border=2 align="center">
 		<caption>SCORE CARD</caption>
 			<tr>
@@ -27,10 +27,11 @@
 					<th align="left"><c:out value="${stat.statScore}"></c:out></th>
 			</c:forEach>
 		</table>
-
+<br>
 	
 	
-	<a href="#">Back to Home page</a>
+	<button onclick="window.location.href = '../../user_welcome';">Back to Home page</button>
+	
 
 </body>
 </html>

@@ -28,6 +28,8 @@ public interface OnlineExamService {
 	
 	public ExamUser getUserDetail(String email);
 	
+	public void addStatistic(Statistic stats);
+	
 	
 
 }

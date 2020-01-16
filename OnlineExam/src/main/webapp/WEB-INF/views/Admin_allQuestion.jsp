@@ -10,7 +10,7 @@
 </head>
 <body align="center">
 	
-	<h3>Admin module</h3>
+	<h3>Admin module view questions category wise</h3>
 	<form action="admin_listQuestionCategoryWise">
 		<select name="category">
 			<option value = "Plants">Plants</option>
@@ -39,6 +39,8 @@
 			</c:forEach>
 		</table>
 	</c:if>
+	 <br>
+	<button onclick="window.location.href = 'admin_welcome';">Admin Homepage</button>
 	
 	
 </body>

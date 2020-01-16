@@ -25,6 +25,13 @@ public class GeneralController {
 		
 	}
 	
+	@RequestMapping("/home")
+	public ModelAndView home() {
+		System.out.println("######### USER CONTROLLER => HOME PAGE ########## ");
+		ModelAndView view = new ModelAndView("Home");
+		return view;
+	}
+	
 
 	@RequestMapping("/user_login")
 	public ModelAndView userLogIn() {
@@ -68,24 +75,37 @@ public class GeneralController {
 	public ModelAndView userSignUp() {
 		System.out.println("######### USER CONTROLLER => USER SIGNUP PAGE ########## ");
 		ModelAndView view = new ModelAndView("User_SignUp");
-		view.addObject("confirm", 0);
+		view.addObject("error", -1);
 		return view;
 	}
 	
+	@RequestMapping("/user_signup_sucess")
+	public ModelAndView userSignUpsuccess() {
+		System.out.println("######### USER CONTROLLER => USER SIGNUP PAGE ########## ");
+		ModelAndView view = new ModelAndView("User_SignUp");
+		view.addObject("error", 0);
+		return view;
+	}
+	
+	
+	@RequestMapping("/user_signup_failed")
+	public ModelAndView userSignUpfailed() {
+		System.out.println("######### USER CONTROLLER => USER SIGNUP PAGE ########## ");
+		ModelAndView view = new ModelAndView("User_SignUp");
+		view.addObject("error", 1);
+		return view;
+	}
 
 	
 	@RequestMapping("/user_saveExamUser")
 	public ModelAndView saveExamUser(ExamUser user) {
 		System.out.println("######### USER CONTROLLER => SAVING USER IN DATABASE ########## ");
-		ModelAndView view = new ModelAndView("redirect:/user_signup");
+		ModelAndView view = new ModelAndView();
 		boolean result = onlineExamService.addUser(user);
-		if(result) {
-			System.out.println("SAVEEED SUCCESFULLYYYY.................");
-			view.addObject("error",0);
-		}else {
-			System.out.println("DUPLICATE.......................");
-			view.addObject("error",1);
-		}
+		if(result) 
+			view.setViewName("redirect:/user_signup_sucess");
+		else 
+			view.setViewName("redirect:/user_signup_failed");
 		return view;
 	}
 	
