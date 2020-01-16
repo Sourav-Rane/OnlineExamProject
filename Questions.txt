@@ -18,3 +18,10 @@ insert into question values ('Some plants use water, air and sunlight to make th
 
 insert into question values ('Rice plants need alot of water to','C','Plants','to grow real fast','make more sunlight','survive');
 
+insert into question values ('Which animal used to roam in huge herds across the American West','A','Animals','American buffalo','elk','prairie dog')
+
+insert into question values ('Which animal group is known as a pride','C','Animals','goose','kangaroo','lion')
+
+insert into question values ('Which is the biggest of the Great Apes','B','Animals','orangutan','gorilla','chimpanzee')
+
+insert into question values ('Which animal is the only flying mammal','A','Animals','bat','flying squirrel','albatross')
