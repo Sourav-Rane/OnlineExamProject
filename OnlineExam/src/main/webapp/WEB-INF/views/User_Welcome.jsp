@@ -7,7 +7,8 @@
 <title>Welcome</title>
 </head>
 <body align="center">
-	<h3>Hi User ! Welcome to the Online Exam</h3>
+
+	<h3>Hi <%= session.getAttribute("username") %> Welcome to the Online Exam</h3>
 	<form action="beginTest">
 		<h5> Choose your Exam Category </h5>
 		<select name="category">

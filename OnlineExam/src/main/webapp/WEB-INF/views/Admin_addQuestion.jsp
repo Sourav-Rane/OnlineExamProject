@@ -20,7 +20,6 @@
 
 <h3><center>Admin Add Question</center></h3>
 
-<f:form modelAttribute="question">
 
 	<form >
 
@@ -36,7 +35,7 @@
 
 				<td>
 
-					<select path="questionCategory" name="questionCategory" 
+					<select  name="questionCategory" 
 
 					id="questionCategory">
 
@@ -52,7 +51,7 @@
 
 				<td>Question:</td>
 
-				<td><f:input path="question" placeholder="Enter question" 
+				<td><input placeholder="Enter question" 
 
 				name="question" id="question" /></td>
 
@@ -64,7 +63,7 @@
 
 				<td>Choice 1:</td>
 
-				<td><f:input path="questionChoice1" name="questionChoice1"
+				<td><input  name="questionChoice1"
 
 					id="questionChoice1" placeholder="Enter answer1"/></td>
 
@@ -76,7 +75,7 @@
 
 				<td>Choice 2:</td>
 
-				<td><f:input path="questionChoice2" name="questionChoice2" 
+				<td><input name="questionChoice2" 
 
 				id="questionChoice2" placeholder="Enter answer2"/></td>
 
@@ -86,7 +85,7 @@
 
 				<td>Choice 3:</td>
 
-				<td><f:input path="questionChoice3" name="questionChoice3" 
+				<td><input name="questionChoice3" 
 
 				id="questionChoice3" placeholder="Enter answer3"/></td>
 
@@ -96,7 +95,7 @@
 
 				<td>Correct Answer :</td>
 
-				<td><f:input path="questionAnswer" name="questionAnswer" 
+				<td><input name="questionAnswer" 
 
 				id="questionAnswer" placeholder="Enter correct answer"/></td>
 
@@ -118,7 +117,7 @@
 
 	</form>
 
-	</f:form>
+
 
 </body>
 

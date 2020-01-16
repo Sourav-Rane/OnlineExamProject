@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+	<h5 align="right"><%= session.getAttribute("username") %></h5>
 	<c:if test = "${finalScore lt 50}">
 		<h1>Oops ! Your performance is bad... Good Luck Next Time !!!!!</h1>
 	</c:if>
@@ -18,6 +18,6 @@
 	<h1>Your Score is ${finalScore}%</h1>
 	
 	
-	<a href="../../index">back to Home page</a>
+	<a href="../../user_welcome">back to Home page</a>
 </body>
 </html>

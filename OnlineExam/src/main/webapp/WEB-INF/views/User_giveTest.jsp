@@ -14,7 +14,7 @@
 </style>
 </head>
 <body align="center">
-
+<h5 align="right"><%= session.getAttribute("username") %></h5>
 	<form action="user_SubmitTest">
 		<h2 align="center">Test</h2>
 		<table align="center">

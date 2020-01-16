@@ -34,8 +34,7 @@
 				<tr>
 					<th>${it.count}</th>
 					<th align="left"><c:out value="${qn.question}"></c:out></th>
-					<th><a
-						href="<c:url value='/admin_deleteQuestion/${qn.question}'></c:url>">Delete</a></th>
+					<th><a href="<c:url value='/admin_deleteQuestion/${qn.question}'></c:url>">Delete</a></th>
 				</tr>
 			</c:forEach>
 		</table>

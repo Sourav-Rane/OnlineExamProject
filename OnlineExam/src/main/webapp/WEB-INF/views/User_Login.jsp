@@ -13,10 +13,7 @@
 	<h1 align="center">User Login</h1>
 	<form align="center">
 		<table align="center" cellspacing="4" cellpadding="4">
-			<tr>
-				<td>User Name</td>
-				<td><input name="userName" id="userName" required></td>
-			</tr>
+		
 			<tr>
 				<td>User Email</td>
 				<td><input name="userEmail" id="userEmail" required></td>
@@ -29,7 +26,7 @@
 			</tr>
 			<td align="center"><input type="submit" value="Log in"
 				formaction="checkUser"> </td>
-			<td>New user ?? <a href="userSignup.jsp">Click here to Sign up</a></td>
+			<td>New user ?? <a href="user_signup">Click here to Sign up</a></td>
 		</table>
 	</form>
 	
