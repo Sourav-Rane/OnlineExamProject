@@ -8,17 +8,21 @@ import org.springframework.stereotype.Service;
 
 import com.OnlineExam.deloitte.dao.OnlineExamQuestionDAO;
 import com.OnlineExam.deloitte.dao.OnlineExamStatisticDAO;
+import com.OnlineExam.deloitte.dao.OnlineExamUserDAO;
 import com.OnlineExam.deloitte.model.Question;
 import com.OnlineExam.deloitte.model.Statistic;
 
 @Service
 public class OnlineExamServiceImpl implements OnlineExamService {
-	
+
 	@Autowired
 	OnlineExamQuestionDAO onlineExamQuestionDAO;
-	
+
 	@Autowired
 	OnlineExamStatisticDAO onlineExamStatisticDAO;
+
+	@Autowired
+	OnlineExamUserDAO onlineExamUserDAO;
 
 	@Override
 	public List<Question> listQuestions(String category) {
@@ -34,12 +38,11 @@ public class OnlineExamServiceImpl implements OnlineExamService {
 	public Question getQuestion(String question) {
 		Optional<Question> optionalProduct = onlineExamQuestionDAO.findById(question);
 		Question qn = new Question();
-		if(optionalProduct.isPresent())
-		{
+		if (optionalProduct.isPresent()) {
 			qn = optionalProduct.get();
 		}
 		return qn;
-		
+
 	}
 
 	@Override
@@ -50,5 +53,20 @@ public class OnlineExamServiceImpl implements OnlineExamService {
 	@Override
 	public List<Statistic> listUserStat(String email) {
 		return onlineExamStatisticDAO.findByStatEmail(email);
+	}
+
+	@Override
+	public boolean checkUserExists(String email) {
+		return onlineExamUserDAO.existsById(email);
+	}
+
+	@Override
+	public List<Statistic> listStatistics() {
+		return (List<Statistic>) onlineExamStatisticDAO.findAll();
+	}
+
+	@Override
+	public void addQuestion(Question question) {
+		onlineExamQuestionDAO.save(question);
 	}
 }

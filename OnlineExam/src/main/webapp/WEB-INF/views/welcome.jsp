@@ -1,14 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>INDEX</title>
 </head>
-<body>
-
-<h1>Hello welcome</h1>
-
+<body align = "center">
+	<button onclick="window.location.href = 'admin_question';">LIST DOWN QUESTIONS</button>
+	<button onclick="window.location.href = 'select_TestCategory';">GIVE TEST</button>
 </body>
 </html>

@@ -17,5 +17,12 @@ public interface OnlineExamService {
 
 	public List<Statistic> listUserStat(String email);
 	
+	public boolean checkUserExists(String email);
+	
+	public List<Statistic> listStatistics();
+	
+	public void addQuestion(Question question);
+	
+	
 
 }
